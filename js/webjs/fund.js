@@ -1,4 +1,5 @@
 url = getFundURL(161720);
+chart = require('chart.js');
 $(document).ready(function() {
     $("#holder").html(getFundURL(161720));
     //$("#download").attr("href",getFundURL(161720));
@@ -19,8 +20,38 @@ $(document).ready(function() {
             message: 'You loaded this page on ' + new Date().toLocaleString()
         }
     })
+    showChart(Data.map(function(a){return a.date.toLocaleDateString();}),Data.map(function(a){return a.value;}));
 }
 );
+function showChart(Time,Value){
+var ctx = $("#myChart");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: Time,
+        datasets: [{
+            label: '# of Votes',
+            data: Value,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+}
 function showData(){
     var Data = [];
     var flag = true;
