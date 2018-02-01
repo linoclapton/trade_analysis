@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--script type="text/javascript" src="http://fund.eastmoney.com/pingzhongdata/161720.js?"></script-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript" src="../js/webjs/161720.js"></script>
+    <script type="text/javascript" src="../js/webjs/drag_file.js"></script>
+    <script type="text/javascript" src="../js/webjs/fund.js"></script>
+  </head>
+  <body>
+      <div id="app2">
+          <span v-bind:title="message">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+          </span>
+        </div>
+    <!--We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.-->
+  <a download="" href="" target="blank" id="download"></a>  
+  <div id="holder">
+    Drag your file here
+  </div>
+  <table id="table">
+  </table>
+    <h1>回归1</h1>
+  <table id="max_regression">
+  </table>
+    <h1>回归2</h1>
+  <table id="min_regression">
+  </table>
+    <h1>理想模型</h1>
+  <table id="win">
+  </table>
+  
+  </body>
+</html>
